@@ -81,14 +81,10 @@ addition outside Gemini's original plan.
 ----------------------------------------------------------------------
 THINGS I WOULD HAVE DONE WITH MORE TIME
 ----------------------------------------------------------------------
+  - Task list deletion (missing option identified upon conclusion)
   - Multi-Tagging + cross-list tag filter (Gemini's Phase-3 plan)
   - python-dateutil for natural-language date parsing
-  - Replace inline ALTER TABLE migration with Alembic
-  - Cached / lazy backup-JSON generation
-  - "Import JSON" counterpart to the backup button
-  - Replace datetime.utcnow() with datetime.now(timezone.utc)
-  - 30-day toggle on the Insights chart
-
+  
 
 ----------------------------------------------------------------------
 STACK
