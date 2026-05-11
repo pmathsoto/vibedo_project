@@ -1,0 +1,118 @@
+======================================================================
+VIBEDO -- METADATA
+======================================================================
+
+Author:      Pascal (pmathsoto)
+Build date:  2026-05-09
+Repository:  https://github.com/pmathsoto/vibedo_project
+
+
+----------------------------------------------------------------------
+TIME SPENT
+----------------------------------------------------------------------
+  Pre-build (prompt engineering with Gemini) .... ~3 minutes
+  Coding sprint (Claude Opus 4.7) ............... ~57 minutes
+  Post-build (GitHub publishing) ................ off the clock
+
+  Total time on the exercise: ~60 minutes.
+
+
+----------------------------------------------------------------------
+AI TOOLS USED
+----------------------------------------------------------------------
+  Gemini 3 Fast    Sharpen the meta-prompt (1 turn).
+  Gemini 3 Pro     Generate + revise the 4-phase action plan
+                   in reasoning mode (3 turns).
+  Claude Opus 4.7  All code generation during the 60-minute
+                   coding window (13 turns).
+
+  Editor: VS Code. No code-completion AI was used.
+
+
+----------------------------------------------------------------------
+GITHUB REPOSITORY -- CREATED POST-BUILD
+----------------------------------------------------------------------
+The remote at https://github.com/pmathsoto/vibedo_project was NOT
+part of the 60-minute window. The build ran 00:00 -> 59:50 against
+the local working copy; the GitHub repo was created afterwards as a
+publishing step. CI was authored during the build (Turn 5) but only
+executed on GitHub runners after the post-build push.
+
+
+----------------------------------------------------------------------
+FINAL REPOSITORY LAYOUT
+----------------------------------------------------------------------
+vibedo/
+├── app.py                       # Streamlit UI
+├── services.py                  # Pure DB operations (testable)
+├── db.py                        # Engine + session + auto-migration + env var
+├── models.py                    # SQLAlchemy ORM
+├── test_app.py                  # 6 pytest functions
+├── Dockerfile
+├── requirements.txt
+├── requirements-dev.txt
+├── pyproject.toml               # black config (line-length 100)
+├── .flake8                      # flake8 config (matching)
+├── .dockerignore
+├── README.md
+├── BUILD_LOG.md                 # chronological build journal (markdown)
+├── BUILD_LOG.txt                # plain-text version with Gemini/Claude credits
+├── TRANSCRIPT.md                # this file — full Gemini + Claude prompt log
+├── vibedo.db                    # auto-created on first run
+└── .github/workflows/CI.yml     # black --check + flake8 + pytest
+
+
+----------------------------------------------------------------------
+SCOPE CUTS -- WHAT WAS *NOT* BUILT
+----------------------------------------------------------------------
+Gemini's revised Phase-3 prompt listed 5 features. Only 3 were
+forwarded to Claude:
+
+  Multi-Tagging            CUT     -- out of Phase-3 time budget
+  Markdown Notes           BUILT
+  Productivity Analytics   BUILT
+  Data Portability         BUILT
+  Natural Language Dates   CUT     -- date_input picker covers MVP
+
+Sort-by-priority/due-date was added later (Turn 6) as an ad-hoc
+addition outside Gemini's original plan.
+
+
+----------------------------------------------------------------------
+THINGS I WOULD HAVE DONE WITH MORE TIME
+----------------------------------------------------------------------
+  - Multi-Tagging + cross-list tag filter (Gemini's Phase-3 plan)
+  - python-dateutil for natural-language date parsing
+  - Replace inline ALTER TABLE migration with Alembic
+  - Cached / lazy backup-JSON generation
+  - "Import JSON" counterpart to the backup button
+  - Replace datetime.utcnow() with datetime.now(timezone.utc)
+  - 30-day toggle on the Insights chart
+
+
+----------------------------------------------------------------------
+STACK
+----------------------------------------------------------------------
+  Streamlit + SQLAlchemy 2.x + SQLite + pytest + black/flake8 +
+  GitHub Actions + Docker (python:3.11-slim).
+
+
+----------------------------------------------------------------------
+FEATURES DELIVERED
+----------------------------------------------------------------------
+  - Multiple lists, sidebar switcher
+  - Task CRUD with inline edit + immediate-DB-write completion
+  - Priority badges colored red / yellow / green
+  - Due dates red when overdue (open tasks only)
+  - Markdown-rendered notes with View / Edit tabs
+  - 7-day completion bar chart + KPI metrics
+  - Sort dropdown: Newest / Priority / Due date / A -> Z
+  - One-click JSON backup
+  - Dockerized; CI green on lint + tests
+
+
+----------------------------------------------------------------------
+SEE ALSO
+----------------------------------------------------------------------
+  TRANSCRIPT.md   Full Gemini + Claude prompt log.
+  README.md       Setup / run instructions.
