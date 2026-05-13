@@ -2,7 +2,7 @@
 VIBEDO -- METADATA
 ======================================================================
 
-Author:      Pascal (pmathsoto)
+Author:      Pascual (pmathsoto)
 Build date:  2026-05-09
 Repository:  https://github.com/pmathsoto/vibedo_project
 
@@ -55,8 +55,6 @@ vibedo/
 ├── .flake8                      # flake8 config (matching)
 ├── .dockerignore
 ├── README.md
-├── BUILD_LOG.md                 # chronological build journal (markdown)
-├── BUILD_LOG.txt                # plain-text version with Gemini/Claude credits
 ├── TRANSCRIPT.md                # this file — full Gemini + Claude prompt log
 ├── vibedo.db                    # auto-created on first run
 └── .github/workflows/CI.yml     # black --check + flake8 + pytest

@@ -63,13 +63,17 @@ Both run in CI on every push and pull request via `.github/workflows/CI.yml`.
 .
 ├── app.py                       # Streamlit UI
 ├── services.py                  # Pure DB operations (testable)
-├── db.py                        # Engine, session factory, auto-migration
+├── db.py                        # Engine + session + auto-migration + env var
 ├── models.py                    # SQLAlchemy ORM
-├── test_app.py                  # Pytest suite
+├── test_app.py                  # 6 pytest functions
 ├── Dockerfile
 ├── requirements.txt
 ├── requirements-dev.txt
-├── pyproject.toml               # black config
-├── .flake8                      # flake8 config
-└── .github/workflows/CI.yml     # lint + tests
+├── pyproject.toml               # black config (line-length 100)
+├── .flake8                      # flake8 config (matching)
+├── .dockerignore
+├── README.md
+├── TRANSCRIPT.md                # this file — full Gemini + Claude prompt log
+├── vibedo.db                    # auto-created on first run
+└── .github/workflows/CI.yml     # black --check + flake8 + pytest
 ```
